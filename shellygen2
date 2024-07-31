@@ -49,3 +49,11 @@ is_valid <?php print !isset($results->errors) && empty($results->errors); ?>
 # HELP total Total energy consumed by the attached electrical appliance in Watt-minute
 # TYPE total gauge
 total <?php print $results->aenergy->total; ?>
+
+# HELP voltage Current AC tension reported by the shelly device, in Volt
+# TYPE voltage gauge
+voltage <?php print $results->voltage; ?>
+
+# HELP current Current going through  reported by the shelly device, in Amp
+# TYPE current gauge
+current <?php print $results->current; ?>
