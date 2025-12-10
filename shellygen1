@@ -25,7 +25,9 @@ $result = curl_exec($curl);
 if (curl_errno($curl)) {
   $error_message = curl_error($curl);
 }
-curl_close($curl);
+if (PHP_VERSION_ID < 80000) {
+  curl_close($curl);
+}
 
 # Handle errors.
 if (isset($error_message)) {
